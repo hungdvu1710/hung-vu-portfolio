@@ -1,34 +1,23 @@
 import "./About.scss";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { urlFor, client } from '../client';
 
-const abouts = [
-  {
-    title: "Full Stack Generalist",
-    description: "I have experience in both frontend and backend development. I can build a website from scratch, from designing UI/UX to deploying the website.",
-    imgUrl: "https://i.imgur.com/8J5ZQ1Z.png"
-  },
-  {
-    title: "Dynamic Developer",
-    description: "I am a dynamic developer. I can work with different programming languages and frameworks.",
-    imgUrl: "https://i.imgur.com/8J5ZQ1Z.png"
-  },
-  {
-    title: "Quick Learner",
-    description: "I am a quick learner and I am always eager to learn new things.",
-    imgUrl: "https://i.imgur.com/8J5ZQ1Z.png"
-  },
-  {
-    title: "Team Player",
-    description: "I am a team player and I can work well with others.",
-    imgUrl: "https://i.imgur.com/8J5ZQ1Z.png"
-  }
-]
 
 const About = () => {
+  const [abouts, setAbouts] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "abouts"]';
+
+    client.fetch(query).then((data) => {
+      setAbouts(data);
+    });
+  }, []);
+
+
   return (
     <>
-
       <div className="app__profiles">
         {abouts.map((about, index) => (
           <motion.div
