@@ -3,7 +3,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Skills from './Skills';
 import Testimonials from './Testimonials';
-import Work from './Work';
+import Projects from './Projects';
 
 export {
   About,
@@ -11,5 +11,5 @@ export {
   Header,
   Skills,
   Testimonials,
-  Work,
+  Projects,
 };
