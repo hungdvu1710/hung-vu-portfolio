@@ -87,4 +87,8 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default AppWrap(
+  MotionWrap(Project, 'app__projects'),
+  'projects',
+  'app__primarybg',
+);
