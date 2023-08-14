@@ -3,6 +3,7 @@ import images from "../constants";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { BsLinkedin, BsMailbox, BsGithub } from "react-icons/bs";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -39,6 +40,26 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+
+            <div className="app__navbar-social">
+              <a
+                href="https://github.com/hungdvu1710"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BsGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hung-vu-750b93180/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BsLinkedin />
+              </a>
+              <a href="mailto:hung.d.vu1017@gmail.com">
+                <BsMailbox />
+              </a>
+            </div>
           </motion.div>
         )}
       </div>

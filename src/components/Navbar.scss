@@ -161,6 +161,21 @@
       }
     }
 
+    .app__navbar-social {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      flex-direction: column;
+      position: relative;
+      box-shadow: none;
+      background: none;
+      margin-right: auto;
+    }
+
     @media screen and (min-width: 900px) {
       display: none;
     }
