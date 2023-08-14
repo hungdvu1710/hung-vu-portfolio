@@ -16,7 +16,7 @@ const Project = () => {
   const handleTouchEnd = () => {
     setTimeout(() => {
       setIsTapped(false);
-    }, 500);
+    },2000);
   }
 
   const animateCard = { y: 0, opacity: 1 }
