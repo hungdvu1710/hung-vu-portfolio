@@ -11,10 +11,13 @@ const Project = () => {
   const [isTapped, setIsTapped] = useState(false);
   const handleTap = () => {
     setIsTapped(true);
+  };
+
+  const handleTouchEnd = () => {
     setTimeout(() => {
       setIsTapped(false);
-    }, 3000); // Reset the animation after a short delay
-  };
+    }, 500);
+  }
 
   const animateCard = { y: 0, opacity: 1 }
 
@@ -38,7 +41,7 @@ const Project = () => {
         className="app__project-portfolio"
       >
         {projects.map((project, index) => (
-          <div className="app__project-item app__flex" key={index} onTouchStart={handleTap}>
+          <div className="app__project-item app__flex" key={index} onTouchStart={handleTap} onTouchEnd={handleTouchEnd}>
             <div className="app__project-img app__flex">
               <img src={urlFor(project.imgUrl)} alt={project.title} />
 
