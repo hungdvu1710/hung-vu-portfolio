@@ -41,7 +41,7 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <div className="app__navbar-social">
+            <ul className="app__navbar-social">
               <a
                 href="https://github.com/hungdvu1710"
                 target="_blank"
@@ -59,7 +59,7 @@ const Navbar = () => {
               <a href="mailto:hung.d.vu1017@gmail.com">
                 <BsMailbox />
               </a>
-            </div>
+            </ul>
           </motion.div>
         )}
       </div>

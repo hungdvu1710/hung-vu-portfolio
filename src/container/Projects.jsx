@@ -8,6 +8,13 @@ import "./Projects.scss";
 
 const Project = () => {
   const [projects, setProjects] = useState([]);
+  const [isTapped, setIsTapped] = useState(false);
+  const handleTap = () => {
+    setIsTapped(true);
+    setTimeout(() => {
+      setIsTapped(false);
+    }, 3000); // Reset the animation after a short delay
+  };
 
   const animateCard = { y: 0, opacity: 1 }
 
@@ -31,7 +38,7 @@ const Project = () => {
         className="app__project-portfolio"
       >
         {projects.map((project, index) => (
-          <div className="app__project-item app__flex" key={index}>
+          <div className="app__project-item app__flex" key={index} onTouchStart={handleTap}>
             <div className="app__project-img app__flex">
               <img src={urlFor(project.imgUrl)} alt={project.title} />
 
@@ -42,6 +49,7 @@ const Project = () => {
                   ease: "easeInOut",
                   staggerChildren: 0.5,
                 }}
+                animate={isTapped ? { opacity: 1 } : { opacity: 0 }}
                 className="app__project-hover app__flex"
               >
                 <a href={project.projectLink} target="_blank" rel="noreferrer">

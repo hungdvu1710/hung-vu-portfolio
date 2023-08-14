@@ -133,7 +133,7 @@
 
     ul {
       list-style: none;
-      margin: 0;
+      margin-bottom: auto;
       padding: 0;
       height: 100%;
       width: 100%;
@@ -164,16 +164,8 @@
     }
 
     .app__navbar-social {
-      display: flex;
-      justify-content: flex-end;
-      flex-direction: column;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      flex-direction: column;
-      box-shadow: none;
-      background: none;
-      margin-right: auto;
+      margin-top: auto;
+      height: fit-content;
     }
   }
 
