@@ -7,6 +7,14 @@ import "./Certifications.scss";
 
 const Certifications = () => {
   const [certifications, setCertifications] = useState([]);
+  useEffect(() => {
+    const query = '*[_type == "certifications"]{link, title}';
+
+    client.fetch(query).then((data) => {
+      setCertifications(data);
+      console.log(data)
+    });
+  }, []);
 
   return (
     <>

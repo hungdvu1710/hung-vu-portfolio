@@ -8,7 +8,7 @@ const About = () => {
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "abouts"]';
+    const query = '*[_type == "abouts"]{title, description, imgUrl}';
 
     client.fetch(query).then((data) => {
       setAbouts(data);

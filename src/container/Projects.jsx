@@ -22,7 +22,7 @@ const Project = () => {
   const animateCard = { y: 0, opacity: 1 }
 
   useEffect(() => {
-    const query = '*[_type == "projects"]';
+    const query = '*[_type == "projects"]{codeLink, description, projectLink, title, imgUrl}';
 
     client.fetch(query).then((data) => {
       setProjects(data);
