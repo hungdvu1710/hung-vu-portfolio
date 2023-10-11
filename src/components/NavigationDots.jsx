@@ -2,7 +2,7 @@ import React from "react";
 
 const NavigationDots = ({ active }) => (
   <div className="app__navigation">
-    {["home", "about", "projects", "skills"].map(
+    {["home", "about", "projects", "skills", "certifications"].map(
       (item, index) => (
         // eslint-disable-next-line jsx-a11y/anchor-has-content
         <a
