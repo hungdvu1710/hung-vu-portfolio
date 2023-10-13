@@ -12,6 +12,14 @@ export default {
       name: 'link',
       title: 'Link',
       type: 'string',
+    },
+    {
+      name: 'imgUrl',
+      title: 'ImageUrl',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }
   ],
 }

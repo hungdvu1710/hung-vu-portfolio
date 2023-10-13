@@ -22,7 +22,7 @@ const Project = () => {
   const animateCard = { y: 0, opacity: 1 }
 
   useEffect(() => {
-    const query = '*[_type == "projects"]{codeLink, description, projectLink, title, imgUrl}';
+    const query = '*[_type == "projects"]{codeLink, description, projectLink, title, _id, imgUrl}';
 
     client.fetch(query).then((data) => {
       setProjects(data);
@@ -40,8 +40,8 @@ const Project = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__project-portfolio"
       >
-        {projects.map((project, index) => (
-          <div className="app__project-item app__flex" key={index} onTouchStart={handleTap} onTouchEnd={handleTouchEnd}>
+        {projects.map((project) => (
+          <div className="app__project-item app__flex" key={project._id} onTouchStart={handleTap} onTouchEnd={handleTouchEnd}>
             <div className="app__project-img app__flex">
               <img src={urlFor(project.imgUrl)} alt={project.title} />
 
